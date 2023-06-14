@@ -13,6 +13,8 @@ export default function SideBar() {
           <Link href={'/createpost'}>Create Post</Link>
           <Link href={'/student'}>Student Form</Link>
           <Link href={'/studentrecord'}>View Students</Link>
+          <Link href={'/contact'}>Contact Form</Link>
+          <Link href={'/contactrecord'}>View Messages</Link>
         </nav>
       </aside>
     </div>

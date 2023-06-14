@@ -11,12 +11,10 @@ export default async function SingleMessage({params}) {
     const data=await res.json()
 
     const handleDelete=async()=>{
-       const res=await fetch('api/contact',{
-        method:'DELETE',
-        body:JSON.stringify({
-            contactid:data._id,
-        }),
-       })
+       const contactid= data._id
+       const res=await fetch(`/api/contact/${contactid}`,{
+        method:'DELETE'
+       });
        if(res.ok){
          router.push('/contactrecord')
        }

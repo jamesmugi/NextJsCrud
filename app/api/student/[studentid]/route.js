@@ -14,3 +14,14 @@ export const GET=async(request,{params})=>{
     }
 
 }
+
+export const DELETE= async(request,{params})=>{
+  const{studentid}=params
+  try {
+    await connectDb()
+    const deleteStudent=await Student.findByIdAndDelete(studentid)
+    return new NextResponse(JSON.stringify(deleteStudent),{status:200})
+  } catch (error) {
+    return new NextResponse("Student Record not found",{status:500})
+  }
+}

@@ -25,16 +25,3 @@ export const POST=async(request)=>{
         
     }
 }
-export const DELETE=async(request)=>{
-    const {contactid}=await request.json()
-    console.log(contactid)
-
-    try {
-        await connectDb()
-        const contactMessage=await Contact.deleteOne(contactid);
-        return new NextResponse(JSON.stringify(contactMessage),{status:200})
-    } catch (error) {
-        return new NextResponse("Message not Found",{status:500})
-    }
-
-}

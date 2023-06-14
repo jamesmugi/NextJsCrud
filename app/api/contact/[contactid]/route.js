@@ -15,3 +15,18 @@ export const GET=async(request,{params})=>{
 
 }
 
+export const DELETE=async(request,{params})=>{
+    const {contactid}=params
+    
+    try {
+        if(contactid){
+            await connectDb()
+            const contactMessage=await Contact.findByIdAndDelete(contactid);
+            return new NextResponse(JSON.stringify(contactMessage),{status:200})
+        }
+        console.log("Id not found")
+    } catch (error) {
+        return new NextResponse("Message not Found",{status:500})
+    }
+
+}

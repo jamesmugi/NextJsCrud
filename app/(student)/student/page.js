@@ -4,7 +4,7 @@ import Form from '@/components/Form'
 import React from 'react'
 import { useRouter } from 'next/navigation'
 
-export default function () {
+export default function Student() {
     const router=useRouter();
     const [regno, setRegno] = useState("")
     const [stdname, setStdname] = useState("")

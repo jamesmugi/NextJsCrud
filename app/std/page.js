@@ -3,7 +3,7 @@ import React from 'react'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react';
 
-export default function std() {
+export default function Std() {
     const [post, setPost] = useState("")
 
     const[sum, setSum]=useState(0)

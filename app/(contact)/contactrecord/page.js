@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 
 export default async function Homepage() {
-  const res=await fetch('http://localhost:3000/api/contact',{cache:'no-store'})
+  const res=await fetch('/api/contact',{cache:'no-store'})
   if(!res.ok) throw new Error("Message not loaded")
   const data=await res.json()
   const content=(data.map((messages)=>{

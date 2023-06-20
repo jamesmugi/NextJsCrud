@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 
 export default async function StudentDetails() {
-    const res=await fetch('http://localhost:3000/api/student',{cache:'no-store'})
+    const res=await fetch('/api/student',{cache:'no-store'})
     if(!res.ok)throw new Error("Student Record not found")
     const data=await res.json()
     const content=(data.map((student)=>{

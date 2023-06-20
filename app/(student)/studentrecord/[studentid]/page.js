@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 export default async function SingleStudent({params}) {
   const router=useRouter()
     const {studentid}=params
-    const res=await fetch(`http://localhost:3000/api/student/${studentid}`)
+    const res=await fetch(`/api/student/${studentid}`)
     if(!res.ok) throw new Error("Student record not found")
     const data=await res.json()
 

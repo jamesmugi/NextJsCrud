@@ -13,7 +13,7 @@ const [email, setEmail] = useState("")
  
     useEffect(() => {
         const EditUser=async()=>{
-            const res=await fetch(`http://localhost:3000/api/user/${userid}`,{cache:'no-store'})
+            const res=await fetch(`/api/user/${userid}`,{cache:'no-store'})
             if(!res.ok)throw new Error("Data not fetched")
             const data=await res.json()
             setData(data)

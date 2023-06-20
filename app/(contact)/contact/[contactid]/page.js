@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation'
 export default async function SingleMessage({params}) {
     const router=useRouter()
     const {contactid}=params
-    const res=await fetch(`http://localhost:3000/api/contact/${contactid}`)
+    const res=await fetch(`/api/contact/${contactid}`)
     if(!res.ok) throw new Error("Message not fetched")
     const data=await res.json()
 

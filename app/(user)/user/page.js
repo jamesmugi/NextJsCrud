@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export default async function UserPage() {
 
-    const res=await fetch('http://localhost:3000/api/user',{cache:"no-store"})
+    const res=await fetch('/api/user',{cache:"no-store"})
     if(!res.ok) throw new Error("Error fetching users data")
 
     const data=await res.json()

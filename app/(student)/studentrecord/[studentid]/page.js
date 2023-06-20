@@ -18,11 +18,16 @@ export default async function SingleStudent({params}) {
         router.push('/studentrecord')
       }
     }
+    const handleEdit=async()=>{
+      const stdid=data._id
+      router.push(`/edit-student/${stdid}`)
+    }
   return (
     <div>
         <div className='flex flex-row gap-4' >
         <p>{data.regno}</p>
           <p onClick={()=>handleDelete(data._id)} className='bg-red-800  px-1 rounded-lg text-white cursor-pointer'>Delete</p>
+          <p onClick={()=>handleEdit(data._id)} className='bg-red-800  px-1 rounded-lg text-white cursor-pointer'>Edit</p>
                 
          </div>
         

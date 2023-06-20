@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 export default async function SingleUser({params}) {
@@ -10,7 +11,7 @@ export default async function SingleUser({params}) {
   return (
     <div>
         <p>{data._id}</p>
-        <p>{data.name}</p>
+       <Link href={`/edituser/${data._id}`}><p >{data.name}</p></Link> 
         <p>{data.email}</p>
     </div>
   )

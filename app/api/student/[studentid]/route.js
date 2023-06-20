@@ -25,3 +25,23 @@ export const DELETE= async(request,{params})=>{
     return new NextResponse("Student Record not found",{status:500})
   }
 }
+
+export const PATCH=async(request,{params})=>{
+  
+  const {regno,stdname,email,phone}=await request.json()
+ 
+  try {
+      await connectDb();
+      const stdDetails=await Student.findById(params.studentid)
+      stdDetails.regno=regno
+      stdDetails.stdname=stdname
+      stdDetails.email=email
+      stdDetails.phone=phone
+      //const addStudent=new Student({regno,stdname,email,phone})
+      await stdDetails.save();
+      return new NextResponse(JSON.stringify(stdDetails),{status:201})
+  } catch (error) {
+      new NextResponse("Student record not added",{status:500})
+  }
+ 
+}
